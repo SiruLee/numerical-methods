@@ -2,8 +2,18 @@
 #include <iomanip>
 #include <string>
 using namespace std;
+
+void exit()
+{
+    cout << "press enter to exit...";
+    std::cin.ignore(std::cin.rdbuf()->in_avail());
+    cin.ignore();
+}
+
 int main()
 {
+    ios_base::sync_with_stdio(false);
+
     long double n = -1, x = 1;
     int seq = -1;
 
@@ -69,7 +79,8 @@ int main()
         {
             str = str.substr(0, pos + 1);
         }
-        cout << "The approximation of the square root of " << n << " by Newton's Method (Convergency of a Sequence) is: " << str;
+        cout << "The approximation of the square root of " << n << " by Newton's Method (Convergency of a Sequence) is: " << str << "\n";
     }
+    exit();
     return 0;
 }
